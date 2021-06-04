@@ -280,6 +280,7 @@ class SendReplyToCustomer implements ShouldQueue
                 $part1['type'] = TYPETEXT;
                 $part1['subtype'] = 'html';
                 $part1['contents.data'] = $reply_mail->render();
+                $part1['charset'] = 'UTF-8';
 
                 try {
                     $folder = $client->getFolder($imap_sent_folder);
